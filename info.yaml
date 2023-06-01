@@ -1,7 +1,7 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    366318576852367361        # If using wokwi, set this to your project's ID
+  wokwi_id: 366318576852367361        # If using wokwi, set this to your project's ID
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
@@ -36,7 +36,7 @@ documentation:
       Explain how to test your project
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
- inputs:
+  inputs:
   - Sn
   - So
   - Sp
@@ -45,7 +45,7 @@ documentation:
   - Np
   - TestOUT # to test TestBidir
   - TestOE # control TestBidir (0-input)
- outputs:
+  outputs:
   - Cn
   - Co
   - Cp
@@ -54,7 +54,7 @@ documentation:
   - ErrO
   - ErrP
   - ErrOut
- bidirectional:
+  bidirectional:
   - On # always input
   - Oo # always input
   - Op # always input
