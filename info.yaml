@@ -1,7 +1,7 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  wokwi_id:    366318576852367361        # If using wokwi, set this to your project's ID
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
@@ -22,10 +22,10 @@ yaml_version: 3.5
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       ""      # Your name
-  title:        ""      # Project title
+  author:       "Alexander Shabarshin"      # Your name
+  title:        "TT03p5 ternary async test"      # Project title
   language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  description:  ""      # Short description of what your project does
+  description:  "Async Ternary Selector"      # Short description of what your project does
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
@@ -36,40 +36,38 @@ documentation:
       Explain how to test your project
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
-  inputs:               
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-# A description of what the outputs do (e.g. status LED, SPI MISO, etc)
-  outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
-# A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
-  bidirectional:
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+ inputs:
+  - Sn
+  - So
+  - Sp
+  - Nn
+  - No
+  - Np
+  - TestOUT # to test TestBidir
+  - TestOE # control TestBidir (0-input)
+ outputs:
+  - Cn
+  - Co
+  - Cp
+  - OutReady
+  - ErrN
+  - ErrO
+  - ErrP
+  - ErrOut
+ bidirectional:
+  - On # always input
+  - Oo # always input
+  - Op # always input
+  - Pn # always input
+  - Po # always input
+  - Pp # always input
+  - ErrAny # always output
+  - TestBidir # bidirectional test
 
 # The following fields are optional
-  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  tag:          "asynchronous, ternary"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
   external_hw:  ""      # Describe any external hardware needed
-  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  discord:      "Shaos#3571"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
   clock_hz:     0       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
+  picture:      "wokwi-sch-async-tt03p5.png"      # relative path to a picture in your repository
